@@ -1,0 +1,232 @@
+/* ==========================================================================
+   CSS Minimal - Juste l'essentiel
+   ========================================================================== */
+
+/* 1. Base & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 2. Conteneurs & Sections */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+/* 3. En-tête & Navigation */
+.header {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.header-container,
+.nav,
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-container {
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0066cc;
+}
+
+/* Bouton menu mobile (icône ☰ / ✕) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle::before {
+  content: "☰";
+}
+
+.nav-toggle.active::before {
+  content: "✕";
+}
+
+.hamburger {
+  display: none;
+}
+
+/* 4. Boutons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+.btn-secondary {
+  background: #f5f5f5;
+}
+
+/* 5. Hero */
+.hero {
+  background: #f8f9fa;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.preview-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #fff;
+}
+
+/* 6. Services / Cartes */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 7. À propos & Formulaire */
+.check-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 450px;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* 8. Pied de page */
+.footer {
+  border-top: 1px solid #eee;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  color: #666;
+}
+
+.footer-container,
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 9. Responsive Mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
