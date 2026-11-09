@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-creme: #f6f0e2;
-  --color-papier: #fffbf2;
-  --color-foret: #1f3d2f;
-  --color-terracotta: #c8502c;
-  --color-sable: #d9cfb8;
-  --color-gris-vert: #5f6f64;
+  --color-primary: #c8502c;
+  --color-secondary: #1f3d2f;
+  --color-background: #f6f0e2;
+  --color-surface: #fffbf2;
+  --color-border: #d9cfb8;
+  --color-muted: #5f6f64;
+  --color-error: #c8502c;
 
   --font-titre: "Bricolage Grotesque", sans-serif;
   --font-texte: "Figtree", sans-serif;
 }
 
 body {
-  background-color: var(--color-creme);
-  color: var(--color-foret);
+  background-color: var(--color-background);
+  color: var(--color-secondary);
   font-family: var(--font-texte);
 }

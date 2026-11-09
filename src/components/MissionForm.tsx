@@ -79,7 +79,7 @@ function MissionForm({ onCreer }: MissionFormProps) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="space-y-5 rounded-2xl bg-papier p-6 shadow-[6px_6px_0_var(--color-foret)] ring-2 ring-foret sm:p-8"
+      className="space-y-5 rounded-2xl bg-surface p-6 shadow-[6px_6px_0_var(--color-secondary)] ring-2 ring-secondary sm:p-8"
     >
       <h2 className="font-titre text-2xl font-bold">Nouvelle mission</h2>
 
@@ -95,7 +95,7 @@ function MissionForm({ onCreer }: MissionFormProps) {
 
       <button
         type="submit"
-        className="w-full cursor-pointer rounded-lg bg-terracotta px-4 py-3 font-titre text-lg font-bold text-white transition hover:bg-foret"
+        className="w-full cursor-pointer rounded-lg bg-primary px-4 py-3 font-titre text-lg font-bold text-white transition hover:bg-secondary"
       >
         Créer le brouillon
       </button>

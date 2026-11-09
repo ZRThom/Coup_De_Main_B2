@@ -9,7 +9,7 @@ type ChampProps = {
 
 function Champ({ label, type, valeur, placeholder, erreur, onChange }: ChampProps) {
  
-  const couleurBordure = erreur ? 'border-terracotta' : 'border-sable'
+  const couleurBordure = erreur ? 'border-error' : 'border-border'
 
   return (
     <label className="block">
@@ -19,9 +19,9 @@ function Champ({ label, type, valeur, placeholder, erreur, onChange }: ChampProp
         value={valeur}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className={`mt-1 block w-full rounded-lg border-2 bg-white px-3 py-2.5 outline-none focus:border-foret ${couleurBordure}`}
+        className={`mt-1 block w-full rounded-lg border-2 bg-white px-3 py-2.5 outline-none focus:border-secondary ${couleurBordure}`}
       />
-      {erreur && <span className="mt-1 block text-sm font-medium text-terracotta">{erreur}</span>}
+      {erreur && <span className="mt-1 block text-sm font-medium text-error">{erreur}</span>}
     </label>
   )
 }
