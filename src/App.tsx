@@ -3,12 +3,25 @@ import MissionForm from './components/MissionForm'
 import MissionCard from './components/MissionCard'
 import type { Mission } from './types'
 
+type Brouillon = Mission & { id: string; epingle: boolean }
+
 function App() {
-  const [missions, setMissions] = useState<Mission[]>([])
+  const [missions, setMissions] = useState<Brouillon[]>([])
 
   function ajouterMission(mission: Mission) {
-    setMissions([...missions, mission])
+    setMissions((precedentes) => [
+      ...precedentes,
+      { ...mission, id: crypto.randomUUID(), epingle: false },
+    ])
   }
+
+  function basculerEpingle(id: string) {
+    setMissions((precedentes) => precedentes.map((mission) =>
+      mission.id === id ? { ...mission, epingle: !mission.epingle } : mission,
+    ))
+  }
+
+  const missionsTriees = [...missions].sort((a, b) => Number(b.epingle) - Number(a.epingle))
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-8 lg:py-16">
@@ -33,8 +46,13 @@ function App() {
           )}
 
           <div className="space-y-4">
-            {missions.map((mission, index) => (
-              <MissionCard key={index} mission={mission} />
+            {missionsTriees.map((mission) => (
+              <MissionCard
+                key={mission.id}
+                mission={mission}
+                epingle={mission.epingle}
+                onBasculerEpingle={() => basculerEpingle(mission.id)}
+              />
             ))}
           </div>
         </section>

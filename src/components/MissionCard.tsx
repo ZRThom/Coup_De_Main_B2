@@ -2,15 +2,17 @@ import type { Mission } from '../types'
 
 type MissionCardProps = {
   mission: Mission
+  epingle: boolean
+  onBasculerEpingle: () => void
 }
 
 function formaterDate(date: string) {
   return new Date(date).toLocaleString('fr-FR')
 }
 
-function MissionCard({ mission }: MissionCardProps) {
+function MissionCard({ mission, epingle, onBasculerEpingle }: MissionCardProps) {
   return (
-    <article className="relative rounded-2xl border border-secondary bg-surface p-6">
+    <article className={`relative rounded-2xl border border-secondary bg-surface p-6 ${epingle ? 'ring-2 ring-primary' : ''}`}>
       <span className="absolute top-4 right-4 rotate-6 rounded border-2 border-primary px-2 py-0.5 font-titre text-xs font-bold text-primary uppercase">
         {mission.statut}
       </span>
@@ -25,6 +27,15 @@ function MissionCard({ mission }: MissionCardProps) {
       </div>
 
       <p className="mt-4 text-sm text-muted">Pas encore visible par les bénévoles</p>
+      <button
+        type="button"
+        aria-pressed={epingle}
+        aria-label={`${epingle ? 'Désépingler' : 'Épingler'} le brouillon ${mission.titre}`}
+        onClick={onBasculerEpingle}
+        className="mt-4 cursor-pointer rounded-lg border border-primary px-3 py-2 font-semibold text-primary transition hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
+        {epingle ? 'Désépingler' : 'Épingler'}
+      </button>
     </article>
   )
 }
