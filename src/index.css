@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-creme: #f6f0e2;
+  --color-papier: #fffbf2;
+  --color-foret: #1f3d2f;
+  --color-terracotta: #c8502c;
+  --color-sable: #d9cfb8;
+  --color-gris-vert: #5f6f64;
+
+  --font-titre: "Bricolage Grotesque", sans-serif;
+  --font-texte: "Figtree", sans-serif;
+}
+
+body {
+  background-color: var(--color-creme);
+  color: var(--color-foret);
+  font-family: var(--font-texte);
+}
