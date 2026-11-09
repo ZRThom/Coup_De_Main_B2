@@ -28,15 +28,9 @@ function MissionForm({ onCreer }: MissionFormProps) {
 
     const nouvellesErreurs: Erreurs = {}
 
-    if (titre.trim() === '') {
+    if (titre.trim() === '' || lieu.trim() === '' || debut === '') {
       nouvellesErreurs.titre = 'Le titre est obligatoire.'
-    }
-
-    if (lieu.trim() === '') {
       nouvellesErreurs.lieu = 'Le lieu est obligatoire.'
-    }
-
-    if (debut === '') {
       nouvellesErreurs.debut = 'Le début est obligatoire.'
     }
 
