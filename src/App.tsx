@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-8 lg:py-16">
       <header className="mb-10 lg:mb-14">
-        <p className="font-semibold text-primary">coup2main · espace organisateur</p>
         <h1 className="mt-2 font-titre text-5xl font-extrabold tracking-tight sm:text-7xl">
           Préparer une mission
         </h1>
@@ -24,11 +23,11 @@ function App() {
 
         <section>
           <h2 className="mb-4 font-titre text-2xl font-bold">
-            Mes brouillons ({missions.length})
+            Mes brouillons
           </h2>
 
           {missions.length === 0 && (
-            <p className="rounded-2xl border-2 border-dashed border-border p-8 text-center text-muted">
+            <p className="rounded-2xl border border-border p-8 text-center text-muted">
               Aucun brouillon pour le moment. Ta première mission apparaîtra ici.
             </p>
           )}
